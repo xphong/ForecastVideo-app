@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForecastVideo App</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bigvideo.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app_override.css">    
+    <!-- build:js js/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div class="loader"></div>
+    <div class="container">
+      <div class="row">
+        <div class="weather-container small-12 small-centered medium-10 medium-centered large-10 large-centered columns">
+          <div class="dateicon-container row">
+            <div class="large-4 medium-4 small-8 columns">
+              <h3 id="date"></h3>
+              <h5 id="day"></h5>
+              <h5 id="time">
+                <span id="hours"></span>
+                <span id="point">:</span>
+                <span id="minutes"></span>
+              </h5>
+            </div>
+            <div class="large-2 medium-2 small-4 columns right">
+              <h3 id="icon" data-icon="R"></h3>
+            </div>
+          </div>
+          <div class="temperature-container row">
+            <h1 id="temperature">24<sup>°</sup></h1>
+            <h2 id="summary">Rain</h2>
+          </div>
+          <div class="forecast-container row">
+            <h4 id="atemperature">Feels like 30</h4>
+            <h5 id="pop">P.O.P 80%</h5>
+            <h5 id="wind">Wind SW 25 km/h</h5>
+            <h5 id="humidity">Humidity 80%</h5>
+          </div>
+        </div>  
+      </div>
+    </div>
+    
+    <!-- build:js js/vendor/jquery.min.js -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.8.22.custom.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/foundation/foundation.min.js -->
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <!-- endbuild -->
+
+    <script>
+    $(window).load(function() {
+      $(".loader").fadeOut("slow");
+    });
+    </script>
+
+    <!-- BigVideo -->
+    <script src="js/jquery.imagesloaded.min.js"></script>
+    <script src="js/video.js"></script>
+    <script src="js/bigvideo.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/forecast.js"></script>
+
+  </body>
+</html>

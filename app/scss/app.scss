@@ -1,4 +1,5 @@
-@import "fonts"; // Global fonts and colour variables
+@import "fonts"; // Custom fonts
+@import "mixins"; // Custom mixins and variables
 @import "normalize";
 @import "settings";
 @import "settings-override"; // Override Foundation settings
