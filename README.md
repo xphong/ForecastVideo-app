@@ -1,17 +1,22 @@
-# ForecastVideo-app
-A responsive weather app that uses the Forecast IO API v2 to query for current weather conditions while displaying a weather video in the background using BigVideo.js
+# [ForecastVideo-app](http://www.phonghuynh.ca/forecastvideo/)
+A responsive weather app that uses the [Forecast IO API v2](https://developer.forecast.io
+) to query for current weather conditions while displaying a looping weather video in the background using [BigVideo.js](http://dfcb.github.io/BigVideo.js/
+)
 
-Automatically updates forecast every 5 minutes, also updates and gets current time/date.
+Automatically updates forecast every 15 minutes, also updates and gets current time/date.
 
 Location defaulted to Toronto, Canada and celsius degrees format.
 
 Mobile uses a background image since videos do not autoplay on mobile devices.
+
+[View Live](http://www.phonghuynh.ca/forecastvideo/)
 
 ## Quickstart
 Watch runs on 127.0.0.1:9000
 ```
 npm install
 bower install
+grunt build
 grunt
 ```
 
@@ -61,13 +66,25 @@ http://dfcb.github.io/BigVideo.js/
 * Open Sans
 * Meteocons Weather Icons http://www.alessioatzeni.com/meteocons/
 
+## Videos & Images
+Finding free videos and images was quite a pain.
+Most video clips are from http://www.beachfrontbroll.com/
+Images are from http://www.sxc.hu/
+
+You can replace them with your own by going into the folders:
+```
+app/images/background
+app/videos
+```
+Just keep the same file name.
+
 ## Author
 **Phong Huynh**
 + [Website](http://phonghuynh.ca)
 + [GitHub](http://github.com/xphong)
 
 ## Future Extension
-Will probably be in separate app.
+Will be in separate app.
 Features will include:
 * Enter in location
 * Select video or image background

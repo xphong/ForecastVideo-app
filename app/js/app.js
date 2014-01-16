@@ -29,11 +29,11 @@ var app = (function() {
   });
 
   // Perfectly center on resize
-  $('.container').css({
-    height: $(window).height(),
-    width: $(window).width()
-  });
   $(window).resize(function(){
+    $('.container').css({
+      height: $(window).height(),
+      width: $(window).width()
+    });
     $('.weather-container').css({
       left: ($(window).width() - $('.weather-container').outerWidth())/2,
       top: ($(window).height() - $('.weather-container').outerHeight())/2
