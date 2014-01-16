@@ -27,12 +27,14 @@ body, html { overflow-x: hidden; overflow-y: hidden; }
   max-height: 100%;
   margin:auto;
   .weather-container {
-    position: relative;
+    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
     min-height: rem-calc(580);
-    margin-top: 4%;
+    top: 50%;
+    left: 50%;
+    //margin-top: 4%;
     h1, h2, h3, h4, h5, h6, p {
       color: white;
       text-shadow: 1px 1px 1px #000000;

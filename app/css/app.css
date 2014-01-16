@@ -4942,12 +4942,13 @@ body, html {
   max-height: 100%;
   margin: auto; }
   .container .weather-container {
-    position: relative;
+    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
     min-height: 36.25rem;
-    margin-top: 4%; }
+    top: 50%;
+    left: 50%; }
     .container .weather-container h1, .container .weather-container h2, .container .weather-container h3, .container .weather-container h4, .container .weather-container h5, .container .weather-container h6, .container .weather-container p {
       color: white;
       text-shadow: 1px 1px 1px black;

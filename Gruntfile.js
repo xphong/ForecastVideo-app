@@ -20,7 +20,8 @@ module.exports = function(grunt) {
 
 		jshint: {
 			options: {
-				jshintrc: '.jshintrc'
+				jshintrc: '.jshintrc',
+        ignores: ['app/js/video.js', 'app/js/bigvideo.js', 'app/js/jquery.imagesloaded.min.js', 'app/js/jquery-ui-1.8.22.custom.min.js']
 			},
 			all: [
 				'Gruntfile.js',
@@ -28,17 +29,26 @@ module.exports = function(grunt) {
 			]
 		},
 
+    cssmin: {
+      build: {
+        files: {
+          'dist/css/app.css': [ 'app/css/*.css' ]
+        }
+      }
+    },
+
 		clean: {
 			dist: {
 				src: ['dist/*']
 			},
 		},
+
 		copy: {
 			dist: {
 				files: [{
 					expand: true,
 					cwd:'app/',
-					src: ['css/**', 'js/**', 'images/**', 'fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+					src: ['css/**', 'js/**', 'images/**', 'fonts/**', 'videos/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
 					dest: 'dist/'
 				}, {
 					expand: true,
@@ -115,11 +125,15 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
 
 	grunt.registerTask('build', ['sass']);
 	grunt.registerTask('default', ['build', 'connect:app', 'watch']);
 	grunt.registerTask('validate-js', ['jshint']);
 	grunt.registerTask('server-dist', ['connect:dist']);
-	grunt.registerTask('publish', ['clean:dist', 'validate-js', 'useminPrepare', 'copy:dist', 'usemin']);
+	grunt.registerTask('publish', ['clean:dist', 'validate-js', 'useminPrepare', 'uglify', 'concat', 'copy:dist', 'usemin', 'cssmin']);
 
 };

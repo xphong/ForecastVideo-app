@@ -8,7 +8,14 @@ Location defaulted to Toronto, Canada and celsius degrees format.
 Mobile uses a background image since videos do not autoplay on mobile devices.
 
 ## Quickstart
-Watch runs on 127.0.0.1:9000, dist runs on 127.0.0.1:9001
+Watch runs on 127.0.0.1:9000
+```
+npm install
+bower install
+grunt
+```
+
+Dist runs on 127.0.0.1:9001
 ```
 npm install
 bower install
@@ -45,6 +52,8 @@ http://dfcb.github.io/BigVideo.js/
 * watch
 * clean
 * uncss
+* concat
+* mincss
 * uglify
 * copy
 
@@ -58,7 +67,7 @@ http://dfcb.github.io/BigVideo.js/
 + [GitHub](http://github.com/xphong)
 
 ## Future Extension
-Will probably be in separate app. 
+Will probably be in separate app.
 Features will include:
 * Enter in location
 * Select video or image background
