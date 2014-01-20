@@ -4919,10 +4919,14 @@ th.hide-for-touch {
 
 body, html {
   overflow-x: hidden;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  background: grey; }
 
 #big-video-image {
   min-width: 1366px; }
+
+.vjs-control-bar {
+  display: none !important; }
 
 .loader {
   position: fixed;
@@ -4939,7 +4943,6 @@ body, html {
   max-height: 100%;
   margin: auto; }
   .container .weather-container {
-    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -4985,6 +4988,15 @@ body, html {
 @media (max-width: 320px) {
   body, html {
     overflow-y: auto; }
+  .container .weather-container {
+    padding-top: 1.25rem;
+    min-height: 30rem; }
+    .container .weather-container h1 {
+      font-size: 9.375rem; }
+    .container .weather-container h2 {
+      font-size: 2.25rem; }
   .container .dateicon-container {
     padding: 0;
-    margin-bottom: 1.25rem; } }
+    margin-bottom: 0.625rem; }
+  .container .forecast-container h4 {
+    margin-bottom: 0.3125rem; } }

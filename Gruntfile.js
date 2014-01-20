@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         }
       },
       options: {
-        ignore: ['#big-video-wrap']
+        ignore: ['#big-video-wrap', '.vjs-control-bar']
       }
     },
 

@@ -1,6 +1,8 @@
-body, html { overflow-x: hidden; overflow-y: hidden; }
+body, html { overflow-x: hidden; overflow-y: hidden; background: #808080; }
 
 #big-video-image { min-width: 1366px; }
+
+.vjs-control-bar { display: none !important; }
 
 // Page Loader
 .loader {
@@ -20,7 +22,6 @@ body, html { overflow-x: hidden; overflow-y: hidden; }
   max-height: 100%;
   margin: auto;
   .weather-container {
-    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -72,9 +73,18 @@ body, html { overflow-x: hidden; overflow-y: hidden; }
 @media (max-width: 320px) {
   body, html {overflow-y: auto;}
   .container {
+    .weather-container {
+      padding-top: rem-calc(20);
+      min-height: rem-calc(480);
+      h1 { font-size: rem-calc(150); }
+      h2 { font-size: rem-calc(36); }
+    }
     .dateicon-container {
       padding: 0;
-      margin-bottom: rem-calc(20);
+      margin-bottom: rem-calc(10);
+    }
+    .forecast-container h4 {
+      margin-bottom: rem-calc(5);
     }
   }
 }
