@@ -4965,6 +4965,7 @@ body, html {
   max-height: 100%;
   margin: auto; }
   .container .weather-container {
+    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -5005,12 +5006,15 @@ body, html {
 
 @media (max-width: 480px) {
   body, html {
-    overflow-y: auto; } }
+    overflow-y: auto; }
+  .container .weather-container {
+    position: relative !important; } }
 
 @media (max-width: 320px) {
   body, html {
     overflow-y: auto; }
   .container .weather-container {
+    position: relative !important;
     padding-top: 1.25rem;
     min-height: 30rem; }
     .container .weather-container h1 {

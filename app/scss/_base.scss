@@ -22,6 +22,7 @@ body, html { overflow-x: hidden; overflow-y: hidden; background: #808080; }
   max-height: 100%;
   margin: auto;
   .weather-container {
+    position: absolute;
     color: white;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -68,12 +69,18 @@ body, html { overflow-x: hidden; overflow-y: hidden; background: #808080; }
 // Mobile
 @media (max-width: 480px) {
   body, html {overflow-y: auto;}
+  .container {
+    .weather-container {
+      position: relative !important;
+    }
+  }
 }
 
 @media (max-width: 320px) {
   body, html {overflow-y: auto;}
   .container {
     .weather-container {
+      position: relative !important;
       padding-top: rem-calc(20);
       min-height: rem-calc(480);
       h1 { font-size: rem-calc(150); }

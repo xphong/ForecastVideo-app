@@ -29,22 +29,18 @@ var app = (function() {
   });
 
   // Perfectly center on resize
-  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  }
-  else {
-    $(window).resize(function(){
-      $('.container').css({
-        height: $(window).height(),
-        width: $(window).width()
-      });
-      $('.weather-container').css({
-        position: 'absolute',
-        left: ($(window).width() - $('.weather-container').outerWidth())/2,
-        top: ($(window).height() - $('.weather-container').outerHeight())/2
-      });
+  $(window).resize(function(){
+    $('.container').css({
+      height: $(window).height(),
+      width: $(window).width()
     });
+    $('.weather-container').css({
+      position: 'absolute',
+      left: ($(window).width() - $('.weather-container').outerWidth())/2,
+      top: ($(window).height() - $('.weather-container').outerHeight())/2
+    });
+  });
 
-    $(window).resize();
-  }
+  $(window).resize();
 
 })();
