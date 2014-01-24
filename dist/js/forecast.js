@@ -46,9 +46,6 @@
 
   // private variables
   f._apiKey ='8638f2d6a266f36f9ed32a2e21ad4174'; // api key for forecast.io
-  f._lat = 43.6486;// Toronto latitude
-  f._long = -79.3853; // Toronto longitude
-  f._url = 'https://api.forecast.io/forecast/' + f._apiKey + '/' + f._lat + ',' + f._long; // api url for ajax call
   f._currentTemperature = null;
   f._celsius = null;
 
@@ -56,16 +53,34 @@
   f.clock = null;
 
   // initializes our Forecast object by getting the forecast
-  f.__initialize = function(){
-    f.getForecast();
+  f.__initialize = function() {
+    f.getLocation(function(result) {
+      if (result) {
+        f.getForecast('https://api.forecast.io/forecast/' + f._apiKey + '/' + result.loc);
+      }
+      else {
+        f.getForecast('https://api.forecast.io/forecast/' + f._apiKey + '/43.6486,-79.3853');
+      }
+    });
+
     f.clock = new Clock($('#minutes'), $('#point'), $('#hours'), $('#date'), $('#day'));
 
     // get forecast every 15 minutes
     setInterval(f.getForecast, 900000);
   };
 
+  f.getLocation = function(callback) {
+    $.ajax({
+      url: 'http://ipinfo.io',
+      dataType: 'jsonp'
+    })
+    .done(function(result){
+      callback(result);
+    });
+  };
+
   // converts farenheit result from forecast.io to celsius
-  f.getCelsius = function(tempFarenheit){
+  f.getCelsius = function(tempFarenheit) {
     return Math.round((tempFarenheit - 32) * 5 / 9);
   };
 
@@ -175,7 +190,7 @@
   };
 
   // round wind speed in KM
-  f.getWindSpeed = function(windSpeed){
+  f.getWindSpeed = function(windSpeed) {
     return Math.round(windSpeed*1.60934);
   };
 
@@ -241,14 +256,14 @@
   };
 
   // makes ajax call to forecast.io
-  f.getForecast = function(){
+  f.getForecast = function(locationURL){
     $.ajax({
-      url:f._url,
+      url:locationURL,
       dataType:'jsonp'
     }).done(function(result){
       f._currentTemperature = result.currently;
       console.log(f._currentTemperature);
-      return f.updateDisplay();
+      f.updateDisplay();
     });
   };
 

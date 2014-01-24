@@ -1,15 +1,15 @@
-# [ForecastVideo-app](http://www.phonghuynh.ca/forecastvideo/)
-A responsive weather app that uses the [Forecast IO API v2](https://developer.forecast.io
+# [ForecastVideo-app](http://forecastvideo.phonghuynh.ca/)
+A responsive weather app that uses the [Forecast.io API v2](https://developer.forecast.io
 ) to query for current weather conditions while displaying a looping weather video in the background using [BigVideo.js](http://dfcb.github.io/BigVideo.js/
 )
 
-Automatically updates forecast every 15 minutes, also updates and gets current time/date.
+Automatically updates forecast every 15 minutes in celsius format, also updates and gets current time/date.
 
-Location defaulted to Toronto, Canada and celsius degrees format.
+Location is your current location using the ipinfo.io API. If the API does not work the location is defaulted to Toronto, Canada.
 
 Mobile uses a background image since videos do not autoplay on mobile devices.
 
-[View Live](http://www.phonghuynh.ca/forecastvideo/)
+[View Live](http://forecastvideo.phonghuynh.ca/)
 
 ## Quickstart
 Watch runs on 127.0.0.1:9000
@@ -30,14 +30,15 @@ grunt server-dist
 ```
 
 ## Technologies Used
-* Forecast IO API
+* Forecast.io API
 * BigVideo.js
+* ipinfo.io Geolocation API
 * Zurb Foundation 5
 * Sass
 * Yeoman
 * Grunt
 
-### Forecast IO API
+### Forecast.io API
 Weather API that returns current conditions in a JSON object using this format:
 ```
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
@@ -48,6 +49,10 @@ https://developer.forecast.io
 ### BigVideo.js
 jQuery plugin for big background videos that fills the website frame.
 http://dfcb.github.io/BigVideo.js/
+
+### ipinfo.io API
+A Geolocation API that returns the current IP's geolocation.
+http://ipinfo.io/developers
 
 ### Grunt
 * sass
@@ -67,8 +72,7 @@ http://dfcb.github.io/BigVideo.js/
 * Meteocons Weather Icons http://www.alessioatzeni.com/meteocons/
 
 ## Videos & Images
-Finding free videos and images was quite a pain.
-Most video clips are from http://www.beachfrontbroll.com/
+Most free video clips are from http://www.beachfrontbroll.com/
 Images are from http://www.sxc.hu/
 
 You can replace them with your own by going into the folders:
