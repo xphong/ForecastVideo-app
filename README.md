@@ -87,14 +87,6 @@ Just keep the same file name.
 + [Website](http://phonghuynh.ca)
 + [GitHub](http://github.com/xphong)
 
-## Future Extension
-Will be in separate app.
-Features will include:
-* Enter in location
-* Select video or image background
-* Select celsius or farenheit
-* Background colour picker
-
 ## License
 The MIT License (MIT)
 
